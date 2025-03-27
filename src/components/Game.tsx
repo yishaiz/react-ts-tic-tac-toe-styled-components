@@ -7,6 +7,7 @@ type LayoutProps = {
 
 const Row = styled.div<LayoutProps>`
   display: flex;
+  /* background-color: lightsalmon; */
   flex-direction: row;
   gap: ${(props) => props.gap}px;
 `;
@@ -27,8 +28,30 @@ const StyledSquare = styled.button`
   font-weight: bold;
 `;
 
+function Square() {
+  return <StyledSquare>X</StyledSquare>;
+}
+
 function Board() {
-  return <div>TODO: board</div>;
+  return (
+    <Column gap={0}>
+      <Row gap={0}>
+        <Square />
+        <Square />
+        <Square />
+      </Row>
+      <Row gap={0}>
+        <Square />
+        <Square />
+        <Square />
+      </Row>{' '}
+      <Row gap={0}>
+        <Square />
+        <Square />
+        <Square />
+      </Row>
+    </Column>
+  );
 }
 
 function Log() {
@@ -45,7 +68,7 @@ function Game() {
   return (
     <Row gap={20}>
       <Column gap={20}>
-        <div>Test</div>
+        <div>Status</div>
         <Board />
       </Column>
       <Log />
