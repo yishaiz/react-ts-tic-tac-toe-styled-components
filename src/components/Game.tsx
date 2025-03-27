@@ -17,6 +17,16 @@ const Column = styled.div<LayoutProps>`
   gap: ${(props) => props.gap}px;
 `;
 
+const StyledSquare = styled.button`
+  width: 34px;
+  height: 34px;
+  background: #fff;
+  border: 1px solid #999;
+  padding: 0;
+  font-size: 24px;
+  font-weight: bold;
+`;
+
 function Board() {
   return <div>TODO: board</div>;
 }
