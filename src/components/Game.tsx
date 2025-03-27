@@ -11,12 +11,20 @@ const Row = styled.div<LayoutProps>`
   gap: ${(props) => props.gap}px;
 `;
 
+const Column = styled.div<LayoutProps>`
+  display: flex;
+  flex-direction: column;
+  gap: ${(props) => props.gap}px;
+`;
+
+
 function Game() {
   return (
-    <div>
-      <h2>Hello Tic tac Toe</h2>
-      <Row gap={2} />
-    </div>
+    <Row gap={20}>
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </Row>
   );
 }
 
