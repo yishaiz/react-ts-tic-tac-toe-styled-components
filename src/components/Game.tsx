@@ -17,13 +17,28 @@ const Column = styled.div<LayoutProps>`
   gap: ${(props) => props.gap}px;
 `;
 
+function Board() {
+  return <div>TODO: board</div>;
+}
+
+function Log() {
+  return (
+    <ol>
+      <li>
+        <button>Got to move</button>
+      </li>
+    </ol>
+  );
+}
 
 function Game() {
   return (
     <Row gap={20}>
-      <div>One</div>
-      <div>Two</div>
-      <div>Three</div>
+      <Column gap={20}>
+        <div>Test</div>
+        <Board />
+      </Column>
+      <Log />
     </Row>
   );
 }
