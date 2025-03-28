@@ -7,7 +7,6 @@ type LayoutProps = {
 
 const Row = styled.div<LayoutProps>`
   display: flex;
-  /* background-color: lightsalmon; */
   flex-direction: row;
   gap: ${(props) => props.gap}px;
 `;
@@ -77,9 +76,3 @@ function Game() {
 }
 
 export default Game;
-
-// const Column = styled.div<LayoutProps>`
-//   display: flex;
-//   flex-direction: column;
-//   gap: ${(props) => props.gap}px;
-// `;
