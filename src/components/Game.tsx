@@ -72,12 +72,23 @@ function Board({ board, onClick }: BoardProps) {
   );
 }
 
-function Log() {
+type LogProps = {
+  history: BoardState[];
+  jumpTo: (step: number) => void;
+};
+
+function Log({ history, jumpTo }: LogProps) {
   return (
     <ol>
-      <li>
-        <button>Got to move</button>
-      </li>
+      {history.map((_, index) => {
+        return (
+          <li key={index}>
+            <button onClick={() => jumpTo(index)}>
+              Go to {index === 0 ? 'start' : `move #${index}`}
+            </button>
+          </li>
+        );
+      })}
     </ol>
   );
 }
@@ -94,7 +105,7 @@ function Game() {
         </div>
         <Board board={current} onClick={handleClick} />
       </Column>
-      <Log />
+      <Log history={gameState.history} jumpTo={jumpTo} />
     </Row>
   );
 }
